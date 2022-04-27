@@ -15,7 +15,7 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
+    static: path.resolve(__dirname, "public"),
   },
   plugins: [
     new htmlWebpackPlugin({
@@ -30,9 +30,9 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
